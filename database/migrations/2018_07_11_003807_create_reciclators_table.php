@@ -14,7 +14,7 @@ class CreateReciclatorsTable extends Migration
     public function up()
     {
         Schema::create('reciclators', function (Blueprint $table) {
-            $table->increments('id')->primary();
+            $table->increments('id');
             $table->string('document_type',3);
             $table->integer('document')->unique();
             $table->string('first_name',100); 
