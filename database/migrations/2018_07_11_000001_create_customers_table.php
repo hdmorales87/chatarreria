@@ -16,10 +16,10 @@ class CreateCustomersTable extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->increments('id')->primary();
             $table->bigInteger('nit')->unique();
-            $table->string('commercial_name'); 
-            $table->string('business_name');
-            $table->string('address');
-            $table->integer('phone_number');
+            $table->string('commercial_name',140); 
+            $table->string('business_name',140);
+            $table->string('address',100);
+            $table->integer('phone_number'); 
 
             $table->timestamps();
             $table->engine    = 'MyIsam';

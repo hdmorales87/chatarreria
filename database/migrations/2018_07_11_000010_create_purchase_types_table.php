@@ -15,7 +15,7 @@ class CreatePurchaseTypesTable extends Migration
     {
         Schema::create('purchase_types', function (Blueprint $table) {
             $table->increments('id')->primary();
-            $table->string('name');
+            $table->string('name',100);
             $table->integer('price');
             $table->timestamps();
             $table->engine    = 'MyIsam'; 
