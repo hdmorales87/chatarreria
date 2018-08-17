@@ -22,7 +22,7 @@ class CreateReciclatorsTable extends Migration
             $table->string('address');
             $table->integer('phone_number');
             $table->integer('mobile_number');
-            $table->integer('id_type_purchase')->unsigned();            
+            $table->unsignedInteger('id_type_purchase')->comment('Id de tipo de compra de la tabla tipos de compra');            
             $table->timestamps();
             $table->engine    = 'MyIsam';
             $table->charset   = 'utf8';

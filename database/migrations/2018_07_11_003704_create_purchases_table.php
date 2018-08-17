@@ -16,9 +16,12 @@ class CreatePurchasesTable extends Migration
         Schema::create('purchases', function (Blueprint $table) {
             $table->increments('id');
             $table->date('fecha');
-            $table->integer('id_type_purchase')->unsigned();            
-            $table->float('weight',8,2); 
+            $table->unsignedInteger('id_type_purchase')->comment('Id de tipo de compra de la tabla tipos de compra');            
+            $table->float('weight',8,2)->comment('Peso de la chatarra'); 
             $table->timestamps();
+            $table->engine    = 'MyIsam'; 
+            $table->charset   = 'utf8';
+            $table->collation = 'utf8_unicode_ci';
         });
     }
 
