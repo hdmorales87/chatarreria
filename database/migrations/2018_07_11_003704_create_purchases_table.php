@@ -16,8 +16,7 @@ class CreatePurchasesTable extends Migration
         Schema::create('purchases', function (Blueprint $table) {
             $table->increments('id');
             $table->date('fecha');
-            $table->integer('id_type_purchase')->unsigned(); 
-            $table->foreign('id_type_purchase')->references('id')->on('purchase_types')->onDelete('cascade');
+            $table->integer('id_type_purchase')->unsigned();            
             $table->float('weight',8,2); 
             $table->timestamps();
         });

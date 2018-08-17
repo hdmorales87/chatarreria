@@ -4,3 +4,6 @@ php artisan make:model Reciclador -m
 php artisan make:model Cliente -m
 php artisan make:model Compra -m
 php artisan make:model CompraTipo -m
+
+php artisan make:migration alter_reciclators_table --table=reciclators
+php artisan make:migration alter_purchases_table --table=purchases

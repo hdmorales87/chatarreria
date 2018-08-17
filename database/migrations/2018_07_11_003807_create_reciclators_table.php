@@ -15,15 +15,14 @@ class CreateReciclatorsTable extends Migration
     {
         Schema::create('reciclators', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('document_type',3);
+            $table->string('document_type');
             $table->integer('document')->unique();
-            $table->string('first_name',100); 
-            $table->string('last_name',100);
-            $table->string('address',100);
+            $table->string('first_name'); 
+            $table->string('last_name');
+            $table->string('address');
             $table->integer('phone_number');
             $table->integer('mobile_number');
-            $table->integer('id_type_purchase')->unsigned();  
-            $table->foreign('id_type_purchase')->references('id')->on('purchase_types')->onDelete('cascade');
+            $table->integer('id_type_purchase')->unsigned();            
             $table->timestamps();
             $table->engine    = 'MyIsam';
             $table->charset   = 'utf8';
