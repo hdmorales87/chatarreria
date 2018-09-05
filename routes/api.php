@@ -22,3 +22,9 @@ Route::resource('purchase_types','PurchaseTypeController');
 
 //Agregamos nuestra ruta al controller de Customers
 Route::resource('customers','CustomerController');
+
+//Agregamos nuestra ruta al controller de Reciclators
+Route::resource('reciclators','ReciclatorController');
+
+//Agregamos nuestra ruta al controller de Purchases
+Route::resource('purchases','PurchaseController'); 
