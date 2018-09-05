@@ -14,13 +14,10 @@ class DocumentTypesSeeder extends Seeder
     {
         DB::table('document_types')->insert([
 			[
-        		'name'  => 'carton',
-				'price' => 5000,
-				
+        		'name'  => 'C.C',		
 			],
 			[			
-        		'name'  => 'papel',
-				'price' => 2000,
+        		'name'  => 'NIT',
 			] 
 		]);
     }

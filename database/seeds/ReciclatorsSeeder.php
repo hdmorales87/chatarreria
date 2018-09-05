@@ -12,29 +12,27 @@ class ReciclatorsSeeder extends Seeder
      */
     public function run()
     {
-  //       DB::table('customers')->insert([
-		// 	[
-		// 		'document_type' => ''
-		// 		'document' => 
-		// 		'first_name' => 
-		// 		'last_name' => 
-		// 		'address' => 
-		// 		'phone_number' => 
-		// 		'mobile_number' => 
-		// 		'id_type_purchase' => 
-  //       		'nit' => 900568896,
-		// 		'commercial_name' => 'Erika Fiscal',
-		// 		'business_name' => 'Erika',
-		// 		'address' => 'Cll 45 32-25',
-		// 		'phone_number' => 4255689
-		// 	],
-		// 	[			
-  //       		'nit' => 900765896,
-		// 		'commercial_name' => 'Pepito Perez',
-		// 		'business_name' => 'Pepe S.A',
-		// 		'address' => 'Cll 85 64-44',
-		// 		'phone_number' => 4478596
-		// 	] 
-		// ]);
+        DB::table('reciclators')->insert([
+			[
+				'id_document_type' => 1,
+				'document' => 1113124878,
+				'first_name' => 'Carlos David',
+				'last_name' => 'Ortega Lopez',
+				'address' => 'Cra 32 44 52',
+				'phone_number' => 2567890,
+				'mobile_number' => 3148596344,
+				'id_type_purchase' => 1        		
+			],
+			[			
+        		'id_document_type' => 1,
+				'document' => 1123124878,
+				'first_name' => 'Giovany Mauricio',
+				'last_name' => 'Muñoz Vergara',
+				'address' => 'Cra 44 23 34',
+				'phone_number' => 5567890,
+				'mobile_number' => 3208976789,
+				'id_type_purchase' => 2
+			] 
+		]);
     }
 }

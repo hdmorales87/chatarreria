@@ -14,14 +14,16 @@ class CustomersSeeder extends Seeder
     {
         DB::table('customers')->insert([
 			[
-        		'nit' => 900568896,
+        		'id_document_type' => 2,
+        		'document' => 900568896,
 				'commercial_name' => 'Erika Fiscal',
 				'business_name' => 'Erika',
 				'address' => 'Cll 45 32-25',
 				'phone_number' => 4255689
 			],
-			[			
-        		'nit' => 900765896,
+			[		
+        		'id_document_type' => 2,      					
+        		'document' => 900765896,
 				'commercial_name' => 'Pepito Perez',
 				'business_name' => 'Pepe S.A',
 				'address' => 'Cll 85 64-44',
