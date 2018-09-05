@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Agregamos nuestra ruta al controller de PurchaseTypes
+Route::resource('purchase_types','PurchaseTypeController'); 
+
+//Agregamos nuestra ruta al controller de Customers
+Route::resource('customers','CustomerController');

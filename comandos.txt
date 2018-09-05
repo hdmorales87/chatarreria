@@ -6,4 +6,33 @@ php artisan make:model Compra -m
 php artisan make:model CompraTipo -m
 
 php artisan make:migration alter_reciclators_table --table=reciclators
-php artisan make:migration alter_purchases_table --table=purchases
+php artisan make:migration alter_purchases_table --table=purchases 
+
+php artisan make:controller PurchaseTypeController -r
+php artisan route:list
+
+
+POSTMAN API
+192.168.0.102:8000/api/purchase_types
+POST
+{
+	"name": "Papel",
+	"price": 50000
+}
+GET
+192.168.0.102:8000/api/purchase_types/1
+
+192.168.0.102:8000/api/customers
+POST
+{
+	"nit": 900568896,
+	"commercial_name": "Erika Fiscal",
+	"business_name": "Erika",
+	"address": "Cll 45 32-25",
+	"phone_number": 4255689
+}
+GET
+192.168.0.102:8000/api/customers/1
+
+
+
