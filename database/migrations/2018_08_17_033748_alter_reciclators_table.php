@@ -14,6 +14,7 @@ class AlterReciclatorsTable extends Migration
     public function up()
     {
         Schema::table('reciclators', function (Blueprint $table) {
+            $table->foreign('id_document_type')->references('id')->on('document_types')->onDelete('cascade');  
             $table->foreign('id_type_purchase')->references('id')->on('purchase_types')->onDelete('cascade');           
         });
     }

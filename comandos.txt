@@ -8,6 +8,9 @@ php artisan make:model CompraTipo -m
 php artisan make:migration alter_reciclators_table --table=reciclators
 php artisan make:migration alter_purchases_table --table=purchases 
 
+php artisan make:seeder PurchaseTypeSeeder
+ php artisan make:seeder CustomerSeeder
+
 php artisan make:controller PurchaseTypeController -r
 php artisan route:list
 

@@ -15,7 +15,7 @@ class CreateReciclatorsTable extends Migration
     {
         Schema::create('reciclators', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('document_type');
+            $table->unsignedInteger('id_document_type')->comment('Id del tipo de Documento');
             $table->integer('document')->unique();
             $table->string('first_name'); 
             $table->string('last_name');

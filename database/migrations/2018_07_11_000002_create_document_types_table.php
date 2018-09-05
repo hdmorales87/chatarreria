@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePurchasesTable extends Migration
+class CreateDocumentTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreatePurchasesTable extends Migration
      */
     public function up()
     {
-        Schema::create('purchases', function (Blueprint $table) {
+        Schema::create('document_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('date_purchase');
-            $table->unsignedInteger('id_type_purchase')->comment('Id de tipo de compra de la tabla tipos de compra');            
-            $table->float('weight',8,2)->comment('Peso de la chatarra'); 
+            $table->string('name',100);
             $table->timestamps();
             $table->engine    = 'MyIsam'; 
             $table->charset   = 'utf8';
@@ -32,6 +30,6 @@ class CreatePurchasesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('purchases');
+        Schema::dropIfExists('document_types');
     }
 }
