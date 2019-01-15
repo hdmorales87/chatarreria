@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
         	CustomersSeeder::class,
         	PurchasesSeeder::class,
             DocumentTypesSeeder::class,
-            ReciclatorsSeeder::class
+            ReciclatorsSeeder::class,
+            UsersSeeder::class
     	]);         
         //UsersTableSeeder::class,
     }

@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->engine    = 'MyIsam';
             $table->charset   = 'utf8';
-            $table->collation = 'utf8_unicode_ci';
+            $table->collation = 'utf8_unicode_ci'; 
         });
     }
 

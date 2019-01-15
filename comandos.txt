@@ -79,3 +79,12 @@ GET
 }
 GET
 192.168.0.102:8000/api/purchases/1
+
+192.168.0.102:8000/api/users
+{    
+    "name": "Victor Morales",
+    "email": "victor@gmail.com",
+    "password": "12345678"       
+}
+GET
+192.168.0.102:8000/api/users/1
