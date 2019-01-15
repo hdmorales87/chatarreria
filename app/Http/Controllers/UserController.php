@@ -37,6 +37,8 @@ class UserController extends Controller
     {
         $user = new User;
         //Declaramos el nombre con el nombre enviado en el request
+        $user->id_document_type = $request->id_document_type;        
+        $user->document         = $request->document;
         $user->name     = $request->name;        
         $user->email    = $request->email;
         $user->password = $request->password;                

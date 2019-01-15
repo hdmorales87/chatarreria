@@ -82,6 +82,8 @@ GET
 
 192.168.0.102:8000/api/users
 {    
+    "id_document_type": 1,
+    "document": 1113568963,
     "name": "Victor Morales",
     "email": "victor@gmail.com",
     "password": "12345678"       
