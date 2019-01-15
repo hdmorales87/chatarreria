@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Reciclator;
 
 class ReciclatorController extends Controller
 {
@@ -34,7 +35,19 @@ class ReciclatorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $reciclator = new Reciclator;
+        //Declaramos el nombre con el nombre enviado en el request
+        $reciclator->id_document_type = $request->id_document_type;        
+        $reciclator->document         = $request->document;
+        $reciclator->first_name       = $request->first_name; 
+        $reciclator->last_name        = $request->last_name; 
+        $reciclator->address          = $request->address; 
+        $reciclator->phone_number     = $request->phone_number;
+        $reciclator->mobile_number    = $request->mobile_number;
+        $reciclator->id_type_purchase = $request->id_type_purchase;       
+
+        //Guardamos el cambio en nuestro modelo
+        $reciclator->save();
     }
 
     /**
@@ -45,7 +58,7 @@ class ReciclatorController extends Controller
      */
     public function show($id)
     {
-        //
+        return Reciclator::where('id', $id)->get();        
     }
 
     /**

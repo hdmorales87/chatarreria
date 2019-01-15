@@ -17,6 +17,7 @@ class CreatePurchasesTable extends Migration
             $table->increments('id');
             $table->date('date_purchase');
             $table->unsignedInteger('id_type_purchase')->comment('Id de tipo de compra de la tabla tipos de compra');            
+            $table->unsignedInteger('id_reciclator')->comment('Id del reciclador');           
             $table->float('weight',8,2)->comment('Peso de la chatarra'); 
             $table->timestamps();
             $table->engine    = 'MyIsam'; 

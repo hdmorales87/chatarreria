@@ -19,7 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
+
             $table->timestamps();
+            $table->engine    = 'MyIsam';
+            $table->charset   = 'utf8';
+            $table->collation = 'utf8_unicode_ci';
         });
     }
 

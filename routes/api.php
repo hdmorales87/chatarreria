@@ -28,3 +28,6 @@ Route::resource('reciclators','ReciclatorController');
 
 //Agregamos nuestra ruta al controller de Purchases
 Route::resource('purchases','PurchaseController'); 
+
+//Agregamos nuestra ruta al controller de Purchases
+Route::resource('document_types','DocumentTypeController'); 

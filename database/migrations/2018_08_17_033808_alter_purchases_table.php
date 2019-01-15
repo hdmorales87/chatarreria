@@ -15,6 +15,7 @@ class AlterPurchasesTable extends Migration
     {
         Schema::table('purchases', function (Blueprint $table) {
             $table->foreign('id_type_purchase')->references('id')->on('purchase_types')->onDelete('cascade');
+            $table->foreign('id_reciclator')->references('id')->on('reciclators')->onDelete('cascade');            
         });
     }
 

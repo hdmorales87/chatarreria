@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Customer;
+use App\DocumentType;
 
-class CustomerController extends Controller
+class DocumentTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,17 +35,11 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        $customer = new Customer;
+        $document_type = new DocumentType;
         //Declaramos el nombre con el nombre enviado en el request
-        $customer->id_document_type = $request->id_document_type;        
-        $customer->document         = $request->document;
-        $customer->commercial_name  = $request->commercial_name; 
-        $customer->business_name    = $request->business_name; 
-        $customer->address          = $request->address; 
-        $customer->phone_number     = $request->phone_number;       
-
+        $document_type->name = $request->name;                
         //Guardamos el cambio en nuestro modelo
-        $customer->save();
+        $document_type->save();
     }
 
     /**
@@ -56,7 +50,7 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-        return Customer::where('id', $id)->get();
+        return DocumentType::where('id', $id)->get();
     }
 
     /**

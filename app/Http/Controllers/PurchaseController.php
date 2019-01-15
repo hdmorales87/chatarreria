@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Customer;
+use App\Purchase;
 
-class CustomerController extends Controller
+class PurchaseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,17 +35,15 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        $customer = new Customer;
+        $purchase = new Purchase;
         //Declaramos el nombre con el nombre enviado en el request
-        $customer->id_document_type = $request->id_document_type;        
-        $customer->document         = $request->document;
-        $customer->commercial_name  = $request->commercial_name; 
-        $customer->business_name    = $request->business_name; 
-        $customer->address          = $request->address; 
-        $customer->phone_number     = $request->phone_number;       
-
+        $purchase->id_type_purchase = $request->id_type_purchase;
+        $purchase->id_reciclator    = $request->id_reciclator;       
+        $purchase->weight           = $request->weight;
+        $purchase->date_purchase    = date('Y-m-d');      
+              
         //Guardamos el cambio en nuestro modelo
-        $customer->save();
+        $purchase->save();
     }
 
     /**
@@ -56,7 +54,7 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-        return Customer::where('id', $id)->get();
+        return Purchase::where('id', $id)->get();
     }
 
     /**

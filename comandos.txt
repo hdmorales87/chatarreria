@@ -1,3 +1,13 @@
+php artisan migrate:rollback
+php artisan migrate
+php artisan migrate:refresh
+
+//EJECUTAR LOS SEEDERS
+composer dump-autoload
+php artisan db:seed
+php artisan migrate:refresh --seed
+
+
 php artisan serve --host=192.168.0.102 --port=8000
 
 php artisan make:model Reciclador -m
@@ -8,13 +18,11 @@ php artisan make:model CompraTipo -m
 php artisan make:migration alter_reciclators_table --table=reciclators
 php artisan make:migration alter_purchases_table --table=purchases 
 
-php artisan make:seeder PurchaseTypeSeeder
- php artisan make:seeder CustomerSeeder
-
 php artisan make:controller PurchaseTypeController -r
 php artisan route:list
 
-php artisan migrate:refresh --seed
+//CREAR UN SEEDER
+php artisan make:seeder ReviewsSeeder
 
 
 POSTMAN API
@@ -29,15 +37,45 @@ GET
 
 192.168.0.102:8000/api/customers
 POST
-{
-	"nit": 900568896,
-	"commercial_name": "Erika Fiscal",
-	"business_name": "Erika",
-	"address": "Cll 45 32-25",
-	"phone_number": 4255689
+{    
+    "id_document_type": 2,
+    "document": 900777996,
+    "commercial_name": "Vivi Fiscal",
+    "business_name": "Viviana",
+    "address": "Cll 58 46-25",
+    "phone_number": 3336589    
 }
 GET
 192.168.0.102:8000/api/customers/1
 
+192.168.0.102:8000/api/document_types
+POST
+{
+	"name": "RUT"	
+}
+GET
+192.168.0.102:8000/api/document_types/1
 
+192.168.0.102:8000/api/reciclators
+POST
+{    
+    "id_document_type": 1,
+    "document": 1113568963,
+    "first_name": "Victor Stiven",
+    "last_name": "Torres Castro",
+    "address": "Cra 58 77 66",
+    "phone_number": 4569632,
+    "mobile_number": 3159632212,
+    "id_type_purchase": 2    
+}
+GET
+192.168.0.102:8000/api/reciclators/1
 
+192.168.0.102:8000/api/purchases
+{ 
+    "id_type_purchase": 1,
+    "id_reciclator": 1,
+    "weight": 80    
+}
+GET
+192.168.0.102:8000/api/purchases/1
