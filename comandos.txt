@@ -1,3 +1,38 @@
+INSTALAR LAMPP
+sudo wget https://downloadsapachefriends.global.ssl.fastly.net/7.1.18/xampp-linux-x64-7.1.18-0-installer.run
+sudo chmod +x xampp-linux-x64-7.1.18-0-installer.run
+sudo ./xampp-linux-x64-7.1.18-0-installer.run
+
+INSTALAR LARAVEL
+composer create-project --prefer-dist laravel/laravel blog "5.6.*"
+
+INSTALAR GIT
+sudo apt update
+sudo apt install git
+
+git --version
+
+git config --global user.name "Your Name"
+git config --global user.email "youremail@domain.com"
+
+ssh-keygen -t rsa -b 4096
+
+Copy the content of your public SSH key, it is the file id_rsa.pub by default
+Paste the content into your GitHub/BitBucket account on the SSH key section
+
+git clone git@github.com:YOUR_USERNAME/REPO_NAME.git
+
+XAMPP concepto de seguridad
+<Directory "/opt/lampp/phpmyadmin">
+    AllowOverride AuthConfig Limit
+    Order allow,deny 
+    Allow from all 
+    Require all granted 
+    ErrorDocument 403 /error/XAMPP_FORBIDDEN.html.var
+</Directory>
+
+COMANDOS LARAVEL
+
 php artisan migrate:rollback
 php artisan migrate
 php artisan migrate:refresh
